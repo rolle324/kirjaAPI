@@ -1,0 +1,18 @@
+body {
+ 
+}
+
+#title {
+  text-align: center;
+  color: red;
+}
+
+.video-column {
+  text-align: center;
+}
+
+#video-info {
+  color: salmon;
+}
+
+.video-container {}
