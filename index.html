@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Kotisivu</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/kotisivu.css">
+
+    <!-- preconnect load fonts faster. crossorigin actually tells the browser that "resources on this connection are downloaded using CORS."
+        By default, it specifically means "CORS without credentials."-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Title iconi -->
+    <link rel="icon" href="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/afd8c17898.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-    <script src="" async defer></script>
+    <h1 id="title">TITLEEEEEEEE</h1>
+    <i class="fab fa-accessible-icon"></i>
+    <i class="fas fa-camera"></i> <!-- this icon's 1) style prefix == fas and 2) icon name == camera -->
+    <i class="fas fa-user-astronaut fa-5x"></i>
+
+
+    <div class="video-column">
+        <p id="video-info">Tässä lukee videon sisältö</p>
+        <div class="video-container">
+            <video controls width="1000" src="Bully Maguire Bullies Kylo Ren.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+
+    <script src="js/homePage.js" async defer></script>
 </body>
 
 </html>
