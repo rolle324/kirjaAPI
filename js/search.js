@@ -23,14 +23,22 @@ const printResults = (results) => {
   console.log(results);
   
   for (let i = 0; i <= 10; i++) {
-    const book = document.createElement("img");
-    book.src = "http://covers.openlibrary.org/b/id/" + results.docs[i].cover_i + "-M.jpg";
+    const book = document.createElement("div");
+    book.className = "book";
+
+    const cover = document.createElement("img");
+    cover.src = "http://covers.openlibrary.org/b/id/" + results.docs[i].cover_i + "-M.jpg";
+
+    const title = document.createElement("p");
+    title.innerText = results.docs[i].title;
+
     resultsDiv.appendChild(book);
+    book.appendChild(cover);
+    book.appendChild(title);
 
     book.addEventListener("click", () => {
-      console.log(i);
-      const detailString = JSON.stringify(results.docs);
-      localStorage.setItem("Details", detailString);
+      const detailsString = JSON.stringify(results.docs[i]);
+      localStorage.setItem("Details", detailsString);
       window.location.href = "searchDetails.html";
     })
   }
