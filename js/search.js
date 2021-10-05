@@ -29,7 +29,8 @@ const printResults = (results) => {
 
     book.addEventListener("click", () => {
       console.log(i);
-      localStorage.setItem("Details", results.docs[i]);
+      const detailString = JSON.stringify(results.docs);
+      localStorage.setItem("Details", detailString);
       window.location.href = "searchDetails.html";
     })
   }
