@@ -1,12 +1,13 @@
 "use strict";
 
-// Reads the book's details from localStorage
+// Read the book's details from localStorage 
 let key = localStorage.getItem("Key");
 let authorName = localStorage.getItem("Author");
 let publishYear = localStorage.getItem("Published");
 
 const detailsDiv = document.querySelector("#searchDetails");
 
+// Fetch book details based on it's key (includes description and links, but no author name or publishing year)
 fetch("https://openlibrary.org" + key + ".json")
   .then(response => response.json())
   .then(details => printDetails(details))
@@ -19,6 +20,9 @@ const printDetails = (details) => {
   const cover = document.createElement("img");
   cover.src = "http://covers.openlibrary.org/b/id/" + details.covers[0] + "-M.jpg";
 
+  const title = document.createElement("p");
+  title.innerText = details.title;
+
   const author = document.createElement("p");
   author.innerText = authorName;
 
@@ -30,14 +34,15 @@ const printDetails = (details) => {
     description.innerText = details.description;
   } else if (typeof(details.description) == "object") {
     description.innerText = details.description.value.toString();
-    console.log(typeof(description.innerText));
   }
 
   detailsDiv.appendChild(cover);
+  detailsDiv.appendChild(title);
   detailsDiv.appendChild(author);
   detailsDiv.appendChild(published);
   detailsDiv.appendChild(description);
 
+  // Add all links to an unordered list
   if (details.links != null) {
     detailsDiv.innerHTML += `<p>Links:</p>`
     const list = document.createElement("ul");

@@ -12,7 +12,7 @@ searchButton.addEventListener("click", () => {
   getBooks(searchInput.value);
 })
 
-// Fetch books based on given search term
+// Fetch books based on given search term (does not include description and links)
 const getBooks = (search) => {
   fetch("http://openlibrary.org/search.json?q=" + search)
   .then(response => response.json())
