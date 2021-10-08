@@ -1,9 +1,9 @@
 "use strict";
 
 // Read the book's details from localStorage 
-let key = localStorage.getItem("Key");
-let authorName = localStorage.getItem("Author");
-let publishYear = localStorage.getItem("Published");
+const key = localStorage.getItem("Key");
+const authorName = localStorage.getItem("Author");
+const publishYear = localStorage.getItem("Published");
 
 const detailsDiv = document.querySelector("#searchDetails");
 
