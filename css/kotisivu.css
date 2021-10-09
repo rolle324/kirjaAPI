@@ -1,18 +1,13 @@
-body {
- 
-}
-
 #title {
-  text-align: center;
-  color: red;
+    text-align: center;
+    color: red;
+    position: absolute;
 }
 
 .video-column {
-  text-align: center;
+    text-align: center;
 }
 
 #video-info {
-  color: salmon;
+    color: salmon;
 }
-
-.video-container {}
