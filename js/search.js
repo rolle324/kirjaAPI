@@ -1,11 +1,12 @@
 "use strict";
 
 let firstResult = 0;
-let lastResult = 14;
+let lastResult = 12;
 
 const searchInput = document.querySelector("#searchInput");
 const searchButton = document.querySelector("#searchButton");
 const resultsDiv = document.querySelector("#results");
+
 
 // Event listener for search button
 searchButton.addEventListener("click", () => {
@@ -70,7 +71,7 @@ const printResults = (results) => {
 
     const buttonElements = document.createElement("div");
     buttonElements.className = "buttonElements";
-    
+
     const previous = document.createElement("button");
     previous.innerText = "Previous";
 
@@ -84,9 +85,9 @@ const printResults = (results) => {
 
     // Event listener that shows the previous 10 books
     previous.addEventListener("click", () => {
-        if (firstResult >= 14) {
-            firstResult -= 14;
-            lastResult -= 14;
+        if (firstResult >= 12) {
+            firstResult -= 12;
+            lastResult -= 12;
             printResults(results);
         }
     })
@@ -94,8 +95,8 @@ const printResults = (results) => {
     // Event listener that shows the next 10 books
     next.addEventListener("click", () => {
         if (lastResult <= results.docs.length) {
-            firstResult += 14;
-            lastResult += 14;
+            firstResult += 12;
+            lastResult += 12;
             printResults(results);
         }
     })

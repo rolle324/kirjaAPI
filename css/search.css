@@ -1,18 +1,34 @@
-        #results {}
+        #results {
+            position: absolute;
+            left: 5%;
+            width: 60%;
+        }
+        
+        html {
+            background: url("../img/tausta.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
         /* Book's properties */
         
         .book {
             padding: 20px;
             float: left;
             width: 200px;
-            height: 600px;
+            height: 450px;
             overflow: hidden;
-            width: 13%;
+            width: 28%;
         }
+        
+        .buttonElements {}
         /* Book's text property */
         
         .book p {
             font-size: 20px;
+            color: white;
         }
         /* Search bar and button */
         
