@@ -1,7 +1,7 @@
 "use strict";
 
-let firstResult = 0;
-let lastResult = 12;
+let firstResult;
+let lastResult;
 
 const searchInput = document.querySelector("#searchInput");
 const searchButton = document.querySelector("#searchButton");
@@ -10,6 +10,8 @@ const resultsDiv = document.querySelector("#results");
 
 // Event listener for search button
 searchButton.addEventListener("click", () => {
+    firstResult = 0;
+    lastResult = 12;
     getBooks(searchInput.value);
 })
 
@@ -103,9 +105,9 @@ const printResults = (results) => {
     
     document.querySelectorAll(".previousButton").forEach(item => {
         item.addEventListener("click", () => {
-            if (firstResult >= 14) {
-                firstResult -= 14;
-                lastResult -= 14;
+            if (firstResult >= 12) {
+                firstResult -= 12;
+                lastResult -= 12;
                 printResults(results);
             }
         })
@@ -114,8 +116,8 @@ const printResults = (results) => {
     document.querySelectorAll(".nextButton").forEach(item => {
         item.addEventListener("click", () => {
             if (lastResult <= results.docs.length) {
-                firstResult += 14;
-                lastResult += 14;
+                firstResult += 12;
+                lastResult += 12;
                 printResults(results);
             }
         })
