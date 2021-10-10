@@ -7,11 +7,8 @@
     <title>Kotisivu</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/kotisivu.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/navbar.css">
-
-
-
 
     <!-- Font Montserrat -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
@@ -57,28 +54,27 @@
     <script type="text/javascript" src="js/navbar.js"></script>
 
 
-
-
-
-    <h1 id="title">TITLEEEEEEEE</h1>
     <!-- <i class="fab fa-accessible-icon"></i>
     <i class="fas fa-camera"></i> -->
     <!-- this icon's 1) style prefix == fas and 2) icon name == camera -->
     <!-- <i class="fas fa-user-astronaut fa-5x"></i> -->
 
 
-    <div class="video-column">
-        <p id="video-info">Tässä lukee videon sisältö</p>
-        <div class="video-container">
-            <video controls width="1000" src="Bully Maguire Bullies Kylo Ren.mp4" type="video/mp4">
-            </video>
+    <div class="grid-container">
+
+        <div class="grid-item1">
+            <h1 id="title">TITLEEEEEEEE</h1>
         </div>
+
+        <div class="grid-item2">
+            <iframe class="video" src="https://www.youtube.com/embed/L5FmAgBL6qo"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
     </div>
-
-
-
-
-    <script src="js/homePage.js" async defer></script>
+    <script src="js/homePage.js" async defer></script> <!--Defer scripts guarantees the order of execution in which they appear in the page.-->
 
 
 

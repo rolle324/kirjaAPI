@@ -1,0 +1,74 @@
+#title {
+    font-size: 4vw;
+    margin: 10px;
+}
+
+
+#video {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 10px;
+}
+
+.grid-container>div {
+    /* Kaikki divit containerin sisällä*/
+}
+
+.grid-item1 {
+    text-align: center;
+}
+
+.grid-item2 {
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 10px;
+    height: 596px;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1150px) {
+    .grid-item2 {
+        padding-left: 12%;
+        padding-right: 12%;
+        padding-bottom: 15%;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .grid-item2 {
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-bottom: 47%;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-item2 {
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-bottom: 56%;
+        margin: 0;
+    }
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .grid-item2 {
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-bottom: 65%;
+    }
+}
