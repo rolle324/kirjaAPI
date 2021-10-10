@@ -68,8 +68,9 @@ const printResults = (results) => {
         }
     }
 
-    const buttonelements = document.createElement("div");
-    buttonelements.className = "buttonelements";
+    const buttonElements = document.createElement("div");
+    buttonElements.className = "buttonElements";
+    
     const previous = document.createElement("button");
     previous.innerText = "Previous";
 
@@ -77,9 +78,9 @@ const printResults = (results) => {
     next.innerText = "Next";
 
 
-    buttonelements.appendChild(previous);
-    buttonelements.appendChild(next);
-    resultsDiv.appendChild(buttonelements);
+    buttonElements.appendChild(previous);
+    buttonElements.appendChild(next);
+    resultsDiv.appendChild(buttonElements);
 
     // Event listener that shows the previous 10 books
     previous.addEventListener("click", () => {
