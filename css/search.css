@@ -1,3 +1,65 @@
-        #results {
-            margin: auto;
+        #results {}
+        /* Book's properties */
+        
+        .book {
+            padding: 20px;
+            float: left;
+            width: 200px;
+            height: 450px;
+            overflow: hidden;
+            width: 16%;
+        }
+        /* Book's text property */
+        
+        .book p {
+            font-size: 24px;
+        }
+        /* Search bar and button */
+        
+        #search {
+            padding: 10px 0px 10px 10px;
+        }
+        
+        @media only screen and (max-width:1200px) {
+            /* For tablets: */
+            .book {
+                width: 20%;
+            }
+        }
+        
+        @media only screen and (max-width:900px) {
+            /* For tablets: */
+            .book {
+                width: 25%;
+            }
+        }
+        
+        @media only screen and (max-width:800px) {
+            /* For tablets: */
+            .book {
+                width: 30%;
+            }
+        }
+        
+        @media only screen and (max-width:650px) {
+            /* For tablets: */
+            .book {
+                width: 40%;
+            }
+        }
+        
+        @media only screen and (max-width:500px) {
+            /* For tablets: */
+            .book {
+                float: none;
+                width: 50%;
+            }
+        }
+        
+        @media only screen and (max-width:400px) {
+            /* For tablets: */
+            .book {
+                float: none;
+                width: 70%;
+            }
         }
