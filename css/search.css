@@ -1,7 +1,7 @@
         #results {
             position: absolute;
             left: 5%;
-            width: 60%;
+            width: 50%;
         }
         
         html {
@@ -20,7 +20,7 @@
             width: 200px;
             height: 450px;
             overflow: hidden;
-            width: 28%;
+            width: 26%;
         }
         
         .buttonElements {}
@@ -36,39 +36,64 @@
             padding: 10px 0px 10px 10px;
         }
         
-        @media only screen and (max-width:1200px) {
+        #prevAndNextButtons {
+            padding: 10px;
+        }
+        
+        @media only screen and (max-width:1300px) {
             /* For tablets: */
             .book {
-                width: 20%;
+                width: 32%;
             }
         }
         
-        @media only screen and (max-width:900px) {
+        @media only screen and (max-width:1150px) {
             /* For tablets: */
             .book {
-                width: 25%;
+                width: 36%;
             }
         }
         
-        @media only screen and (max-width:800px) {
-            /* For tablets: */
-            .book {
-                width: 30%;
-            }
-        }
-        
-        @media only screen and (max-width:650px) {
+        @media only screen and (max-width:1050px) {
             /* For tablets: */
             .book {
                 width: 40%;
             }
         }
         
+        @media only screen and (max-width:900px) {
+            /* For tablets: */
+            .book {
+                width: 45%;
+            }
+        }
+        
+        @media only screen and (max-width:800px) {
+            /* For tablets: */
+            .book {
+                width: 55%;
+            }
+        }
+        
+        @media only screen and (max-width:650px) {
+            /* For tablets: */
+            .book {
+                width: 65%;
+            }
+        }
+        
+        @media only screen and (max-width:575px) {
+            /* For tablets: */
+            .book {
+                width: 75%;
+            }
+        }
+        
         @media only screen and (max-width:500px) {
             /* For tablets: */
             .book {
-                float: none;
-                width: 50%;
+                float: left;
+                width: 90%;
             }
         }
         
@@ -76,6 +101,6 @@
             /* For tablets: */
             .book {
                 float: none;
-                width: 70%;
+                width: 100%;
             }
         }

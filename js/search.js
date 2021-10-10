@@ -6,6 +6,7 @@ let lastResult;
 const searchInput = document.querySelector("#searchInput");
 const searchButton = document.querySelector("#searchButton");
 const resultsDiv = document.querySelector("#results");
+const searchDiv = document.querySelector("#prevAndNextButtons");
 
 
 // Event listener for search button
@@ -23,9 +24,13 @@ const getBooks = (search) => {
         .catch(error => console.log(error));
 }
 
+
+
 // Print search results and buttons on page
 const printResults = (results) => {
     resultsDiv.innerHTML = ``;
+    searchDiv.innerHTML = ``;
+
     console.log(results);
 
     for (let i = firstResult; i < lastResult; i++) {
@@ -71,6 +76,7 @@ const printResults = (results) => {
         }
     }
 
+
     const buttonElements = document.createElement("div");
     buttonElements.className = "buttonElements";
 
@@ -82,7 +88,7 @@ const printResults = (results) => {
 
     buttonElements.appendChild(previous);
     buttonElements.appendChild(next);
-    resultsDiv.appendChild(buttonElements);
+    searchDiv.appendChild(buttonElements);
 
     // Event listener that shows the previous 10 books
     previous.addEventListener("click", () => {
