@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class='use-all-space'>
+
+<head>
+  <meta http-equiv='X-UA-Compatible' content='IE=Edge' />
+  <meta charset='UTF-8'>
+  <title>Karttapalvelu</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps.css' />
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js"></script>
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/services/services-web.min.js"></script>
+  <style>
+    #map {
+      width: 70vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='map' class='map'></div>
+  <script>
+    //create map on website
+    tt.setProductInfo('librarymap', '0.1');
+    let map = tt.map({
+      key: 'Vw0dMh3omoNtFIr7Wsng7GaRrAxlRcZT',
+      container: 'map',
+      center: [24.945831, 60.192059],
+      zoom: 13
+    });
+
+
+
+    //setting position for unit
+    const unitInitCoordinates = [24.945831, 60.192059];
+    let unitMarker;
+
+    //creating marker for unit
+    function createunitMarker(markerCoordinates, popup) {
+      const unitMarkerElement = document.createElement('div');
+      unitMarkerElement.innerHTML = "<img src='img/clipart1828764.png' alt='Man Waving Arm Free Icon - Man Waving Icon @clipartmax.com' style='width: 30px; height: 30px';>";
+      return new tt.Marker({ element: unitMarkerElement }).setLngLat(markerCoordinates).setPopup(popup).addTo(map);
+    }
+
+    //centering map on unit
+    map = tt.map({
+      key: 'Vw0dMh3omoNtFIr7Wsng7GaRrAxlRcZT',
+      container: 'map',
+      center: unitInitCoordinates,
+      zoom: 13
+    });
+
+    //adding controls on map
+    map.addControl(new tt.NavigationControl());
+    map.addControl(new tt.GeolocateControl({
+      positionOptions: {
+        enableHighAccuracy: true
+      },
+      trackUserLocation: true
+    }));
+
+    unitMarker = createunitMarker(unitInitCoordinates,
+      new tt.Popup({ offset: 35 }).setHTML("Click on the map inside Finland to find closest libraries."));
+
+    unitMarker.togglePopup();
+
+    //removes old marker and sets new marker on given position
+    function drawunitMarkerOnMap(geoResponse) {
+      if (geoResponse && geoResponse.addresses
+        && geoResponse.addresses[0].address.freeformAddress) {
+        unitMarker.remove();
+        unitMarker = createunitMarker(geoResponse.addresses[0].position,
+          new tt.Popup({ offset: 35 }).setHTML(geoResponse.addresses[0].address.freeformAddress));
+        unitMarker.togglePopup();
+      }
+    }
+
+    //when map is clicked changes characters location
+    map.on('click', function (event) {
+      const position = event.lngLat;
+      tt.services.reverseGeocode({
+        key: 'Vw0dMh3omoNtFIr7Wsng7GaRrAxlRcZT',
+        position: position
+      })
+        .then(function (results) {
+          drawunitMarkerOnMap(results);
+
+          getLibraries();
+
+          const lats = [];
+          const lons = [];
+          let listsize = 0;
+
+          //search libraries when position given
+          async function getLibraries() {
+            //api connection
+            const reply = await fetch('https://api.tomtom.com/search/2/categorySearch/Library.json?limit=100&countrySet=FIN&lat=' + position.lat + '&lon=' + position.lng + '&radius=10000&key=Vw0dMh3omoNtFIr7Wsng7GaRrAxlRcZT');
+            if (!reply.ok) throw new Error('Jokin meni pieleen');
+            //fetch json
+            const replies = await reply.json();
+
+            //get position information
+            for (let i = 0; i < replies.results.length; i++) {
+
+              lats[i] = replies.results[i].position.lat;
+              lons[i] = replies.results[i].position.lon;
+
+              listsize = i;
+            }
+
+            //create markers on map
+            for (let i = 0; i < listsize; i++) {
+
+              let lon = lons[i];
+              let lat = lats[i];
+
+              let marker = new tt.Marker()
+                .setLngLat([lon, lat])
+                .addTo(map);
+            }
+          }
+
+        })
+    })
+  </script>
+</body>
