@@ -71,7 +71,7 @@ const printResults = (results) => {
                     localStorage.setItem("Published", "Publishing year unknown");
                 }
 
-                window.location.href = "searchDetails.html";
+                window.open("searchDetails.html");
             })
         }
     }
