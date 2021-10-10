@@ -70,53 +70,33 @@ const printResults = (results) => {
 
     const buttonElements = document.createElement("div");
     buttonElements.className = "buttonElements";
-
+    
     const previous = document.createElement("button");
     previous.innerText = "Previous";
-    previous.className = "previousButton";
 
     const next = document.createElement("button");
     next.innerText = "Next";
-    next.className = "nextButton";
 
-    const buttonElementsBottom = document.createElement("div");
-    buttonElementsBottom.className = "buttonElementsBottom";
-
-    const previousBottom = document.createElement("button");
-    previousBottom.innerText = "Previous";
-    previousBottom.className = "previousButton";
-
-    const nextBottom = document.createElement("button");
-    nextBottom.innerText = "Next";
-    nextBottom.className = "nextButton";
 
     buttonElements.appendChild(previous);
     buttonElements.appendChild(next);
     resultsDiv.appendChild(buttonElements);
 
-    buttonElementsBottom.appendChild(previousBottom);
-    buttonElementsBottom.appendChild(nextBottom);
-    resultsDiv.appendChild(buttonElementsBottom);
-
     // Event listener that shows the previous 10 books
-    
-    document.querySelectorAll(".previousButton").forEach(item => {
-        item.addEventListener("click", () => {
-            if (firstResult >= 14) {
-                firstResult -= 14;
-                lastResult -= 14;
-                printResults(results);
-            }
-        })
+    previous.addEventListener("click", () => {
+        if (firstResult >= 14) {
+            firstResult -= 14;
+            lastResult -= 14;
+            printResults(results);
+        }
     })
 
-    document.querySelectorAll(".nextButton").forEach(item => {
-        item.addEventListener("click", () => {
-            if (lastResult <= results.docs.length) {
-                firstResult += 14;
-                lastResult += 14;
-                printResults(results);
-            }
-        })
+    // Event listener that shows the next 10 books
+    next.addEventListener("click", () => {
+        if (lastResult <= results.docs.length) {
+            firstResult += 14;
+            lastResult += 14;
+            printResults(results);
+        }
     })
 }
