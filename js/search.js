@@ -35,7 +35,7 @@ const printResults = (results) => {
             if (results.docs[i].cover_i != null) {
                 cover.src = "http://covers.openlibrary.org/b/id/" + results.docs[i].cover_i + "-M.jpg";
             } else {
-                cover.src = "\img\search\book.png";
+                cover.src = "img/search/book.png";
             }
             cover.alt = "Cover of " + results.docs[i].title;
             cover.style = "width:100%";
