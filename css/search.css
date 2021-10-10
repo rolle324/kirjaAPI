@@ -1,0 +1,81 @@
+        #results {
+            position: absolute;
+            left: 5%;
+            width: 60%;
+        }
+        
+        html {
+            background: url("../img/tausta.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+        }
+        /* Book's properties */
+        
+        .book {
+            padding: 20px;
+            float: left;
+            width: 200px;
+            height: 450px;
+            overflow: hidden;
+            width: 28%;
+        }
+        
+        .buttonElements {}
+        /* Book's text property */
+        
+        .book p {
+            font-size: 20px;
+            color: white;
+        }
+        /* Search bar and button */
+        
+        #search {
+            padding: 10px 0px 10px 10px;
+        }
+        
+        @media only screen and (max-width:1200px) {
+            /* For tablets: */
+            .book {
+                width: 20%;
+            }
+        }
+        
+        @media only screen and (max-width:900px) {
+            /* For tablets: */
+            .book {
+                width: 25%;
+            }
+        }
+        
+        @media only screen and (max-width:800px) {
+            /* For tablets: */
+            .book {
+                width: 30%;
+            }
+        }
+        
+        @media only screen and (max-width:650px) {
+            /* For tablets: */
+            .book {
+                width: 40%;
+            }
+        }
+        
+        @media only screen and (max-width:500px) {
+            /* For tablets: */
+            .book {
+                float: none;
+                width: 50%;
+            }
+        }
+        
+        @media only screen and (max-width:400px) {
+            /* For tablets: */
+            .book {
+                float: none;
+                width: 70%;
+            }
+        }

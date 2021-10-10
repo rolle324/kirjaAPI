@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/search.css">
+
+    <!-- Font Montserrat -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <body>
+        <!-- Navbar -->
+
+        <header>
+            <a class="logo" href="/"><img src="img/navbar/book_icon.png" alt="logo"></a>
+            <nav>
+                <ul class="nav__links">
+                    <li>
+                        <a href="index.html">Koti </a>
+                    </li>
+                    <li><a href="search.html" id="active">Etsi</a></li>
+                    <li><a href="map.html">Kartta</a></li>
+                </ul>
+            </nav>
+            <p class="menu cta">Menu</p>
+        </header>
+        <div id="mobile__menu" class="overlay">
+            <a class="close">&times;</a>
+            <div class="overlay__content">
+                <a href="index.html">Koti</a>
+                <a href="search.html" id="active">Etsi</a>
+                <a href="map.html">Kartta</a>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/navbar.js"></script>
+    </body>
+
+    <script defer src="js/search.js"></script>
+
+    <div id="search">
+        <input id="searchInput" type="text">
+        <button id="searchButton">Search</button>
+    </div>
+
+    <div id="results">
+
+    </div>
+</body>
+
+</html>

@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+
 <html class='use-all-space'>
 
 <head>
@@ -9,6 +14,10 @@
   <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps.css' />
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js"></script>
   <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/services/services-web.min.js"></script>
+  <link rel="stylesheet" href="css/navbar.css">
+
+  <!-- Font Montserrat -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
   <style>
     #map {
       width: 70vw;
@@ -18,6 +27,33 @@
 </head>
 
 <body>
+    <!-- Navbar -->
+
+    <header>
+        <a class="logo" href="/"><img src="img/navbar/book_icon.png" alt="logo"></a>
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="index.html">Koti </a>
+                </li>
+                <li><a href="search.html">Etsi</a></li>
+                <li><a href="map.html" id="active">Kartta</a></li>
+            </ul>
+        </nav>
+        <p class="menu cta">Menu</p>
+    </header>
+    <div id="mobile__menu" class="overlay">
+        <a class="close">&times;</a>
+        <div class="overlay__content">
+            <a href="index.html">Koti</a>
+            <a href="search.html">Etsi</a>
+            <a href="map.html" id="active">Kartta</a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/navbar.js"></script>
+	
+	
   <div id='map' class='map'></div>
   <script>
     //create map on website

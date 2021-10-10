@@ -1,0 +1,13 @@
+#title {
+    text-align: center;
+    color: red;
+    position: absolute;
+}
+
+.video-column {
+    text-align: center;
+}
+
+#video-info {
+    color: salmon;
+}
