@@ -18,7 +18,12 @@ const printDetails = (details) => {
   console.log(details);
 
   const cover = document.createElement("img");
-  cover.src = "http://covers.openlibrary.org/b/id/" + details.covers[0] + "-M.jpg";
+
+  if (details.covers != null) {
+    cover.src = "http://covers.openlibrary.org/b/id/" + details.covers[0] + "-M.jpg";
+  } else {
+    cover.src = "img/search/book.png";
+  }
 
   const title = document.createElement("p");
   title.innerText = details.title;
