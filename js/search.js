@@ -1,5 +1,6 @@
 "use strict";
 
+let currentPage;
 let firstResult;
 let lastResult;
 
@@ -8,15 +9,13 @@ const searchButton = document.querySelector("#searchButton");
 const resultsDiv = document.querySelector("#results");
 const searchDiv = document.querySelector("#prevAndNextButtons");
 
-
 // Event listener for search button
 searchButton.addEventListener("click", () => {
-    firstResult = 0;
-    lastResult = 12;
+    currentPage = 0;
     getBooks(searchInput.value);
 })
 
-// Fetch books based on given search term (does not include description and links)
+// Fetch books based on given search term
 const getBooks = (search) => {
     fetch("http://openlibrary.org/search.json?q=" + search)
         .then(response => response.json())
@@ -24,18 +23,19 @@ const getBooks = (search) => {
         .catch(error => console.log(error));
 }
 
-
-
 // Print search results and buttons on page
 const printResults = (results) => {
     resultsDiv.innerHTML = ``;
     searchDiv.innerHTML = ``;
 
-    console.log(results);
+    let totalPages = Math.ceil(results.docs.length / 12);
+    firstResult = currentPage * 12;
+    lastResult = firstResult + 12;
 
     for (let i = firstResult; i < lastResult; i++) {
         if (results.docs[i] != null) {
-            const book = document.createElement("div");
+            const book = document.createElement("a");
+            book.href = "searchDetails.html";
             book.className = "book";
 
             const cover = document.createElement("img");
@@ -55,27 +55,17 @@ const printResults = (results) => {
             book.appendChild(cover);
             book.appendChild(title);
 
-            // Event listener that adds the book's details to localStorage and moves to the searchDetails page
+            // Event listener that adds information that will be used in searchDetails.js to localStorage
+            // Some of these will also be used when the user returns to search.html
             book.addEventListener("click", () => {
-                localStorage.setItem("Key", results.docs[i].key);
-
-                if (results.docs[i].author_name != null) {
-                    localStorage.setItem("Author", results.docs[i].author_name[0]);
-                } else {
-                    localStorage.setItem("Author", "Author unknown");
-                }
-
-                if (results.docs[i].first_publish_year != null) {
-                    localStorage.setItem("Published", results.docs[i].first_publish_year);
-                } else {
-                    localStorage.setItem("Published", "Publishing year unknown");
-                }
-
-                window.open("searchDetails.html");
+                localStorage.setItem("Results", JSON.stringify(results));
+                localStorage.setItem("Position", i);
+                localStorage.setItem("Page", currentPage);
             })
         }
     }
-
+    const pageCount = document.createElement("p");
+    pageCount.innerText = "Page: " + (currentPage + 1) + " / " + totalPages;
 
     const buttonElements = document.createElement("div");
     buttonElements.className = "buttonElements";
@@ -86,25 +76,30 @@ const printResults = (results) => {
     const next = document.createElement("button");
     next.innerText = "Next";
 
+    searchDiv.appendChild(buttonElements);
     buttonElements.appendChild(previous);
     buttonElements.appendChild(next);
-    searchDiv.appendChild(buttonElements);
+    buttonElements.appendChild(pageCount);
 
-    // Event listener that shows the previous 10 books
+    // Event listener that shows the previous 12 books
     previous.addEventListener("click", () => {
-        if (firstResult >= 12) {
-            firstResult -= 12;
-            lastResult -= 12;
+        if (currentPage > 0) {
+            currentPage--;
             printResults(results);
         }
     })
 
-    // Event listener that shows the next 10 books
+    // Event listener that shows the next 12 books
     next.addEventListener("click", () => {
-        if (lastResult <= results.docs.length) {
-            firstResult += 12;
-            lastResult += 12;
+        if (currentPage < totalPages - 1) {
+            currentPage++;
             printResults(results);
         }
     })
+}
+
+// Print last results when returning to page
+if (localStorage.getItem("Results") != null) {
+    currentPage = parseInt(localStorage.getItem("Page"));
+    printResults(JSON.parse(localStorage.getItem("Results")));
 }

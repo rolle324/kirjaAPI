@@ -1,14 +1,12 @@
 "use strict";
 
-// Read the book's details from localStorage 
-const key = localStorage.getItem("Key");
-const authorName = localStorage.getItem("Author");
-const publishYear = localStorage.getItem("Published");
+const results = JSON.parse(localStorage.getItem("Results"));
+const position = localStorage.getItem("Position");
 
 const detailsDiv = document.querySelector("#searchDetails");
 
-// Fetch book details based on it's key (includes description and links, but no author name or publishing year)
-fetch("https://openlibrary.org" + key + ".json")
+// Fetch book details based on it's key
+fetch("https://openlibrary.org" + results.docs[position].key + ".json")
   .then(response => response.json())
   .then(details => printDetails(details))
   .catch(error => console.log(error));
@@ -29,10 +27,18 @@ const printDetails = (details) => {
   title.innerText = details.title;
 
   const author = document.createElement("p");
-  author.innerText = authorName;
-
+  if (results.docs[position].author_name[0] != null) {
+    author.innerText = results.docs[position].author_name[0];
+  } else {
+    author.innerText = "Author unknown";
+  }
+  
   const published = document.createElement("p");
-  published.innerText = publishYear;
+  if (results.docs[position].first_publish_year != null) {
+    published.innerText = results.docs[position].first_publish_year;
+  } else {
+    published.innerText = "Publishing year unknown";
+  }
 
   const description = document.createElement("p");
   if (typeof(details.description) == "string") {
