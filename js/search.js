@@ -17,7 +17,7 @@ searchButton.addEventListener("click", () => {
 
 // Fetch books based on given search term
 const getBooks = (search) => {
-    fetch("http://openlibrary.org/search.json?q=" + search)
+    fetch("https://openlibrary.org/search.json?q=" + search)
         .then(response => response.json())
         .then(results => printResults(results))
         .catch(error => console.log(error));
@@ -41,7 +41,7 @@ const printResults = (results) => {
             const cover = document.createElement("img");
             // Use a default cover image if the API doesn't provide one
             if (results.docs[i].cover_i != null) {
-                cover.src = "http://covers.openlibrary.org/b/id/" + results.docs[i].cover_i + "-M.jpg";
+                cover.src = "https://covers.openlibrary.org/b/id/" + results.docs[i].cover_i + "-M.jpg";
             } else {
                 cover.src = "img/search/book.png";
             }

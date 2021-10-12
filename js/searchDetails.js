@@ -18,7 +18,7 @@ const printDetails = (details) => {
   const cover = document.createElement("img");
 
   if (details.covers != null) {
-    cover.src = "http://covers.openlibrary.org/b/id/" + details.covers[0] + "-M.jpg";
+    cover.src = "https://covers.openlibrary.org/b/id/" + details.covers[0] + "-M.jpg";
   } else {
     cover.src = "img/search/book.png";
   }
