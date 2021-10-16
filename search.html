@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/searchbar.css">
 
     <!-- Font Montserrat -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
@@ -47,10 +48,15 @@
 
     <script defer src="js/search.js"></script>
 
-    <div id="search">
-        <input id="searchInput" type="text">
-        <button id="searchButton">Search</button>
+    <div class="wrap">
+        <div id="search" class="search">
+            <input id="searchInput" class="searchTerm" placeholder="What book are you looking for?" type="text">
+            <button id="searchButton" class="searchButton">Search
+        <i class="fa fa-search"></i>
+    </button>
+        </div>
     </div>
+
     <div id="prevAndNextButtons">
 
     </div>
