@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 45px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    font-size: 28px;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.searchButton {
+    width: 80px;
+    height: 45px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+/*Resize the wrap to see the search bar change!*/
+
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width:900px) {
+    .wrap {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width:660px) {
+    .wrap {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .wrap {
+        width: 65%;
+        left: 60%;
+    }
+}
+
+@media only screen and (max-width:440px) {
+    .wrap {
+        width: 77%;
+        left: 60%;
+    }
+}
+
+@media only screen and (max-height:2000px) {
+    .wrap {
+        top: 13%;
+    }
+}
+
+@media only screen and (max-height:980px) {
+    .wrap {
+        top: 17%;
+    }
+}
+
+@media only screen and (max-height:770px) {
+    .wrap {
+        top: 22%;
+    }
+}
+
+@media only screen and (max-height:628px) {
+    .wrap {
+        top: 27%;
+    }
+}
+
+@media only screen and (max-height:466px) {
+    .wrap {
+        top: 37%;
+    }
+}
+
+@media only screen and (max-height:366px) {
+    .wrap {
+        top: 47%;
+    }
+}
+
+@media only screen and (max-height:276px) {
+    .wrap {
+        top: 75%;
+    }
+}
