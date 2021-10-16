@@ -1,6 +1,27 @@
-#map {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* #map {
   width: 70vw;
-  height: 100vh;
-  margin-top: 20px;
-  margin-left: 20px;
+  height: 80vh;
+  margin-left: 10%;
+} */
+
+
+
+.flexbox {
+  position: relative;
+  display: flex;
+  height: 100%;
+  /* Or whatever */
+}
+
+.child {
+  width: 70vw;
+  height: 80vh;
+  /* margin: auto; */
+  margin-left: 12%;
+  margin-top: 2%;
 }

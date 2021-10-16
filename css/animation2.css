@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*ctrl + k -> ctrl + u to uncomment
+ muutama eri väri mahdollisuus */
+
+.animation-area {
+  /* background: linear-gradient(to left, #ffafbd, #ffc3a0); */
+  /* background: linear-gradient(to left, #cc2b5e , #753a88); */
+  background: linear-gradient(to left, #ddd6f3    , #faaca8);
+  /* background: linear-gradient(to left, #de6262  , #ffb88c); */
+  /* background: linear-gradient(to left, #dd5e89 , #f7bb97); */
+  /* background: linear-gradient(to left, #ed4264   , #ffedbc); */
+  /* background: linear-gradient(to right, #ba5370   , #f4e2d8 ); */
+  width: 100%;
+  height: 100vh;
+}
+
+.box-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  overflow: hidden;
+}
+
+.box-area li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate-background 20s linear infinite;
+  /* Animaation nimi*/
+  bottom: -150px;
+}
+
+.box-area li:nth-child(1) {
+  left: 86%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.box-area li:nth-child(2) {
+  left: 6%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+
+.box-area li:nth-child(3) {
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 5.5s;
+}
+
+.box-area li:nth-child(4) {
+  left: 42%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+
+.box-area li:nth-child(5) {
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+
+.box-area li:nth-child(6) {
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+
+@keyframes animate-background {
+
+  /* Animaation nimi*/
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
