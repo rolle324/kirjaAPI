@@ -23,7 +23,15 @@
     text-align: center;
 }
 
+.wrapper{
+    position: relative;
+    height: 90%;
+}
+
 .grid-item2 {
+    position: absolute;
+    top: 0;
+    right: 0;
     text-align: center;
     padding-left: 20%;
     padding-right: 20%;
