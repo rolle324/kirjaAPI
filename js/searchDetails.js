@@ -69,12 +69,6 @@ const printDetails = (details) => {
         description.innerText = "No description found";
     }
 
-    // detailsDiv.appendChild(cover);
-    // detailsDiv.appendChild(title);
-    // detailsDiv.appendChild(author);
-    // detailsDiv.appendChild(published);
-    // detailsDiv.appendChild(description);
-
     detailsDiv.appendChild(gridContainer);
     gridContainer.appendChild(gridItem1);
     gridContainer.appendChild(gridItem2);
@@ -87,20 +81,12 @@ const printDetails = (details) => {
 
     gridItem2.appendChild(description);
 
-
-
-
-
-
-
     // Add all links to an unordered list
     if (details.links != null) {
         gridItem3.innerHTML += `<p class="book-links">Links:</p>`
         const list = document.createElement("ul");
         list.setAttribute('class', 'book-link-list')
         gridItem3.appendChild(list);
-
-
 
         for (let i = 0; i < details.links.length; i++) {
             const listItem = document.createElement("li");
@@ -110,13 +96,8 @@ const printDetails = (details) => {
             link.href = details.links[i].url;
             link.innerText = details.links[i].title;
 
-
-
             list.appendChild(listItem);
             listItem.appendChild(link);
-
-
-
         }
     } else {
         const linkNull = document.createElement('p');
@@ -125,7 +106,4 @@ const printDetails = (details) => {
         gridItem3.appendChild(linkNull);
         console.log(linkNull);
     }
-
-
-
 }

@@ -28,6 +28,8 @@ const printResults = (results) => {
     resultsDiv.innerHTML = ``;
     searchDiv.innerHTML = ``;
 
+    console.log(results);
+
     let totalPages = Math.ceil(results.docs.length / 12);
 
     for (let i = currentPage * 12; i < currentPage * 12 + 12; i++) {
