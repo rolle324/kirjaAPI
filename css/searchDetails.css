@@ -51,3 +51,7 @@ p {
 .book-cover {
     margin: 10px;
 }
+
+.book-link-list {
+    list-style: none;
+}

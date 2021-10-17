@@ -64,7 +64,7 @@ const printDetails = (details) => {
     } else if (typeof (details.description) == "object") {
         description.innerText = details.description.value.toString();
 
-    } if (results.docs[position].description == null) {
+    } if (results.docs[position].description === null) {
         description.setAttribute('class', 'no-data');
         description.innerText = "No description found";
     } else {
