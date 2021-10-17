@@ -1,6 +1,11 @@
 #title {
-    font-size: 4vw;
-    margin: 10px;
+    font-size: 7vw;
+    margin: 3.5vw;
+}
+
+.p {
+    margin: 3px;
+    text-align: center;
 }
 
 
@@ -78,5 +83,8 @@
         padding-left: 3%;
         padding-right: 3%;
         padding-bottom: 65%;
+    }
+    .p {
+        text-align: start;
     }
 }
