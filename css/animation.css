@@ -7,6 +7,7 @@
  muutama eri väri mahdollisuus */
 
 .animation-area {
+  position: relative;
   background: linear-gradient(to left, #ffafbd, #ffc3a0);
   /* background: linear-gradient(to left, #cc2b5e , #753a88); */
   /* background: linear-gradient(to left, #ddd6f3    , #faaca8); */
