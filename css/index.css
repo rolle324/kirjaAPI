@@ -38,6 +38,10 @@
         height: 100%;
     }
 
+    .grid-item2 {
+        padding: 10px;
+    }
+
     .video {
         width: 93%;
     }
