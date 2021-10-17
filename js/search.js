@@ -29,10 +29,8 @@ const printResults = (results) => {
     searchDiv.innerHTML = ``;
 
     let totalPages = Math.ceil(results.docs.length / 12);
-    firstResult = currentPage * 12;
-    lastResult = firstResult + 12;
 
-    for (let i = firstResult; i < lastResult; i++) {
+    for (let i = currentPage * 12; i < currentPage * 12 + 12; i++) {
         if (results.docs[i] != null) {
             const book = document.createElement("a");
             book.href = "searchDetails.html";
