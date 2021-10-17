@@ -3,6 +3,16 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+@font-face {
+    font-family: latoFont;
+    src: url(../fontit/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+    font-family: Ephesis;
+    src: url(../fontit/Ephesis/Ephesis-Regular.ttf);
+}
+
 .search {
     width: 100%;
     position: relative;
@@ -18,7 +28,7 @@ body {
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .searchTerm:focus {
@@ -37,58 +47,161 @@ body {
     font-size: 20px;
 }
 
+#prevAndNextButtons {
+    width: 20%;
+}
 
-/*Resize the wrap to see the search bar change!*/
+.buttonElements p {
+    font-size: 25px;
+    font-family: Ephesis;
+    color: white;
+}
+
+.buttonElements .previousButton {
+    width: 30%;
+    height: 45px;
+    border: 1px solid #00B4CC;
+    background: #0597aa;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.buttonElements .nextButton {
+    width: 30%;
+    height: 45px;
+    border: 1px solid #00B4CC;
+    background: #0597aa;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
 
 .wrap {
     width: 30%;
     position: absolute;
-    top: 18%;
+    top: 15.4%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-@media only screen and (max-width:900px) {
+
+/* Search bar and buttons responsive */
+
+@media only screen and (max-width:1420px) {
+    .buttonElements .previousButton {
+        width: 35%;
+    }
+    .buttonElements .nextButton {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width:1300px) {
     .wrap {
+        width: 35%;
+    }
+    .buttonElements .previousButton {
+        width: 40%;
+    }
+    .buttonElements .nextButton {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .wrap {
+        width: 45%;
+    }
+    .buttonElements .previousButton {
+        width: 45%;
+    }
+    .buttonElements .nextButton {
         width: 45%;
     }
 }
 
-@media only screen and (max-width:660px) {
+@media only screen and (max-width:1000px) {
+    .buttonElements .previousButton {
+        width: 50%;
+    }
+    .buttonElements .nextButton {
+        width: 50%;
+    }
+    #prevAndNextButtons {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width:900px) {
     .wrap {
-        width: 60%;
+        width: 50%;
+    }
+    .searchTerm {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width:760px) {
+    .wrap {
+        width: 65%;
+        left: 65%;
+    }
+    .buttonElements .previousButton {
+        width: 70%;
+    }
+    .buttonElements .nextButton {
+        width: 70%;
+    }
+    #prevAndNextButtons {
+        width: 30%;
     }
 }
 
 @media only screen and (max-width:500px) {
     .wrap {
-        width: 65%;
-        left: 60%;
+        width: 70%;
+    }
+    .searchTerm {
+        font-size: 15px;
+    }
+    .buttonElements .previousButton {
+        width: 90%;
+    }
+    .buttonElements .nextButton {
+        width: 90%;
     }
 }
 
 @media only screen and (max-width:440px) {
-    .wrap {
-        width: 77%;
-        left: 60%;
+    .searchTerm {
+        font-size: 12px;
     }
-}
-
-@media only screen and (max-height:2000px) {
-    .wrap {
-        top: 13%;
+    .buttonElements .previousButton {
+        width: 100%;
+    }
+    .buttonElements .nextButton {
+        width: 100%;
     }
 }
 
 @media only screen and (max-height:980px) {
     .wrap {
-        top: 17%;
+        top: 19.4%;
     }
 }
 
 @media only screen and (max-height:770px) {
     .wrap {
-        top: 22%;
+        top: 21.4%;
+    }
+}
+
+@media only screen and (max-height:700px) {
+    .wrap {
+        top: 24.4%;
     }
 }
 

@@ -18,7 +18,7 @@
             padding: 20px;
             float: left;
             width: 200px;
-            height: 450px;
+            height: 375px;
             overflow: hidden;
             width: 26%;
         }
@@ -33,6 +33,14 @@
         
         #prevAndNextButtons {
             padding: 10px;
+        }
+        /* Responsive search.html */
+        
+        @media only screen and (max-width:1500px) {
+            /* For tablets: */
+            .book {
+                width: 28%;
+            }
         }
         
         @media only screen and (max-width:1300px) {
