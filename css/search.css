@@ -22,8 +22,6 @@
             overflow: hidden;
             width: 26%;
         }
-        
-        .buttonElements {}
         /* Book's text property */
         
         .book p {
@@ -37,63 +35,54 @@
         /* Responsive search.html */
         
         @media only screen and (max-width:1500px) {
-            /* For tablets: */
             .book {
                 width: 28%;
             }
         }
         
         @media only screen and (max-width:1300px) {
-            /* For tablets: */
             .book {
                 width: 32%;
             }
         }
         
         @media only screen and (max-width:1150px) {
-            /* For tablets: */
             .book {
                 width: 36%;
             }
         }
         
         @media only screen and (max-width:1050px) {
-            /* For tablets: */
             .book {
                 width: 40%;
             }
         }
         
         @media only screen and (max-width:900px) {
-            /* For tablets: */
             .book {
                 width: 45%;
             }
         }
         
         @media only screen and (max-width:800px) {
-            /* For tablets: */
             .book {
                 width: 55%;
             }
         }
         
         @media only screen and (max-width:650px) {
-            /* For tablets: */
             .book {
                 width: 65%;
             }
         }
         
         @media only screen and (max-width:575px) {
-            /* For tablets: */
             .book {
                 width: 75%;
             }
         }
         
         @media only screen and (max-width:500px) {
-            /* For tablets: */
             .book {
                 float: left;
                 width: 90%;
@@ -101,7 +90,6 @@
         }
         
         @media only screen and (max-width:400px) {
-            /* For tablets: */
             .book {
                 float: none;
                 width: 100%;

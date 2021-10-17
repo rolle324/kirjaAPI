@@ -55,7 +55,7 @@ nav {
 }
 
 
-/* Edits navigation li:nth first child what is in this case "koti"  */
+/* Edits navigation li:nth first child what is in this case "home"  */
 
 .nav__links li:nth-child(1) {
     padding: 0 20px 0 0;
