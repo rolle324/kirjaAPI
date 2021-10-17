@@ -108,3 +108,23 @@
        font-size: 40px;
    }
 }
+
+@media only screen and (min-width: 1600px) {
+    .p{
+       margin-left: 10%;
+       margin-right: 10%;
+       margin-top: 10px;
+   }
+
+   .grid-item3 {
+       height: 279%;
+   }
+
+   .video {
+       width: 40%;
+   }
+
+   #title {
+       font-size: 40px;
+   }
+}

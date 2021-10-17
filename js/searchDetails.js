@@ -59,10 +59,17 @@ const printDetails = (details) => {
 
     const description = document.createElement("p");
     description.setAttribute('class', 'description');
-    if (typeof(details.description) == "string") {
+    if (typeof (details.description) == "string") {
         description.innerText = details.description;
-    } else if (typeof(details.description) == "object") {
+    } else if (typeof (details.description) == "object") {
         description.innerText = details.description.value.toString();
+
+    } if (results.docs[position].description == null) {
+        description.setAttribute('class', 'no-data');
+        description.innerText = "No description found";
+    } else {
+        description.setAttribute('class', 'description');
+
     }
 
     // detailsDiv.appendChild(cover);
@@ -114,6 +121,12 @@ const printDetails = (details) => {
 
 
         }
+    } else {
+        const linkNull = document.createElement('p');
+        linkNull.setAttribute('class', 'no-data');
+        linkNull.innerText = "No links found";
+        gridItem3.appendChild(linkNull);
+        console.log(linkNull);
     }
 
 
