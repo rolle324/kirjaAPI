@@ -64,12 +64,9 @@ const printDetails = (details) => {
     } else if (typeof (details.description) == "object") {
         description.innerText = details.description.value.toString();
 
-    } if (results.docs[position].description === null) {
+    }  else {
         description.setAttribute('class', 'no-data');
         description.innerText = "No description found";
-    } else {
-        description.setAttribute('class', 'description');
-
     }
 
     // detailsDiv.appendChild(cover);
