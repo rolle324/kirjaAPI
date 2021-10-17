@@ -82,13 +82,13 @@ body {
 .wrap {
     width: 30%;
     position: absolute;
-    top: 18%;
+    top: 15.4%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 
-/* Responsiivisuus */
+/* Search bar and buttons responsive */
 
 @media only screen and (max-width:1420px) {
     .buttonElements .previousButton {
@@ -144,7 +144,7 @@ body {
     }
 }
 
-@media only screen and (max-width:660px) {
+@media only screen and (max-width:760px) {
     .wrap {
         width: 65%;
         left: 65%;
@@ -187,21 +187,21 @@ body {
     }
 }
 
-@media only screen and (max-height:2000px) {
-    .wrap {
-        top: 13%;
-    }
-}
-
 @media only screen and (max-height:980px) {
     .wrap {
-        top: 17%;
+        top: 19.4%;
     }
 }
 
 @media only screen and (max-height:770px) {
     .wrap {
-        top: 22%;
+        top: 21.4%;
+    }
+}
+
+@media only screen and (max-height:700px) {
+    .wrap {
+        top: 24.4%;
     }
 }
 
