@@ -70,9 +70,11 @@ const printResults = (results) => {
 
     const previous = document.createElement("button");
     previous.innerText = "Previous";
+    previous.className = "previousButton"
 
     const next = document.createElement("button");
     next.innerText = "Next";
+    next.className = "nextButton"
 
     searchDiv.appendChild(buttonElements);
     buttonElements.appendChild(previous);
