@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/searchDetails.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/searchDetails.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
+
 <body>
-  <script defer src="js/searchDetails.js"></script>
+    <header>
+        <a class="logo" href="/"><img src="img/navbar/book_icon.png" alt="logo"></a>
+        <nav>
+            <ul class="nav__links">
+                <li>
+                    <a href="index.html">Home </a>
+                </li>
+                <li><a href="search.html" id="active">Search</a></li>
+                <li><a href="map.html">Map</a></li>
+            </ul>
+        </nav>
+        <p class="menu cta">Menu</p>
+    </header>
+    <div id="mobile__menu" class="overlay">
+        <a class="close">&times;</a>
+        <div class="overlay__content">
+            <a href="index.html">Home</a>
+            <a href="search.html" id="active">Search</a>
+            <a href="map.html">Map</a>
+        </div>
+    </div>
+    <script defer src="js/searchDetails.js"></script>
 
-  <div id="searchDetails">
-    <div id="grid-container" class="grid-container"></div>
+    <div id="searchDetails">
+        <div id="grid-container" class="grid-container"></div>
 
-  </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/navbar.js"></script>
 </body>
+
 </html>
